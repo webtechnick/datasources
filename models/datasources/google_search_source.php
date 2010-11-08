@@ -121,7 +121,7 @@ class GoogleSearchSource extends DataSource{
   function __makeRequest(){
     $this->__requestLog[] = array('url' => $this->url, 'query' => $this->query);
     $result = $this->Http->get($this->url, $this->query);
-    $retval = new SimpleExmlElement($result, LIBXML_NOCDATA);
+    $retval = new SimpleXMLElement($result, LIBXML_NOCDATA);
     
     return $this->__parseResults($retval);
   }
